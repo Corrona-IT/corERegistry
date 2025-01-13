@@ -7,6 +7,13 @@
 #' @export
 #'
 create_common_formats <- function(){
+  date_impf <- c("Full Date"                              = 0,
+                 "Day replaced with 01"                   = 1,
+                 "Month replaced with Jan"                = 2,
+                 "Day and Month replaced with 01 and Jan" = 3)
+  print("Creating date imputation (date_impf) format")
+  assign("date_impf", date_impf, envir = parent.frame())
+
   race7_f <- c("White" = 1,
                "Black" = 2,
                "Asian" = 3,
