@@ -12,10 +12,17 @@
 #' @export
 #'
 #' @importFrom stringr str_remove
-#' @importFrom dplyr filter mutate case_when distinct %>%
+#' @importFrom dplyr filter mutate case_when distinct rename %>%
 #' @importFrom textclean replace_white
+#' @importFrom tidyselect any_of
 create_dwh_formats <- function(dwh_lookup_dat){
+  lookup <- c(dwh_variable_name = "std_variable_name",
+              dwh_lookup_acronym = "std_lookup_acronym",
+              dwh_lookup_value = "std_lookup_value",
+              dwh_lookup_code = "std_lookup_code")
+
   dwh_lookups <- dwh_lookup_dat %>%
+    rename(any_of(lookup)) %>%
     filter(! is.na(dwh_lookup_code)) %>%
     mutate(dwh_lookup_acronym = case_when(column_name == "drug_category"           ~ "drug_category",
                                           dwh_variable_name == "reason_1_category" ~ "drug_reason_codes_cat",
