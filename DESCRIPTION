@@ -1,12 +1,17 @@
 Package: corERegistry
-Title: What the Package Does (One Line, Title Case)
+Title: Package with a variety of functions helpful for registry work
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Nicole", "Fergestrom", , "nfergestrom@corevitas.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-9455-1329"))
+Description: This package is a collection of functions used for registry work. Many of these functions were created for work in ADA but\nthey are quite similar to many of the functions in AA and GPP and have evolved for more flexibility. 
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+Imports:
+  dplyr
+  ,stringr
+  ,tidyselect
+  ,labelled
+  ,textclean
