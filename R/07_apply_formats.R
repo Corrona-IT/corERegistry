@@ -15,6 +15,7 @@
 #' @importFrom labelled labelled
 #' @importFrom glue glue
 #' @importFrom rlang :=
+#' @importFrom utils str
 apply_formats <- function(., specs_data, view_name){
   # Takes the current data and uses the bv_mapping data to apply labels to all of the variables needed to be labelled
 
