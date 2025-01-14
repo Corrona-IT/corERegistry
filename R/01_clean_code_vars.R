@@ -24,7 +24,7 @@ clean_code_vars <- function(., drop_dec_vars=TRUE){
       rename_with(~str_replace(., "_code", ""), .cols = ends_with('_code'))
   } else {
     cleaned_data <- curr_data %>%
-      rename_with(~~str_c(., "_dec"), .cols = any_of(code_vars)) %>%
+      rename_with(~str_c(., "_dec"), .cols = any_of(code_vars)) %>%
       rename_with(~str_replace(., "_code", ""), .cols = ends_with('_code'))
   }
 
