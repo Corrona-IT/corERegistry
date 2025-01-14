@@ -4,12 +4,14 @@
 \alias{create_dwh_formats}
 \title{create_dwh_formats}
 \usage{
-create_dwh_formats(dwh_lookup_dat)
+create_dwh_formats(dwh_lookup_dat, source_lookup)
 }
 \arguments{
-\item{dwh_lookup_dat}{supplied data frame with expected variables including (dwh_lookup_acronym, dwh_lookup_code, dwh_lookup_value).
+\item{dwh_lookup_dat}{supplied data frame with expected variables including (dwh_lookup_acronym or column_name, dwh_lookup_code, dwh_lookup_value).
 dwh_lookup_acronym should be the name of the format that ultimately gets new object stored to the working environment with "_f appended
 to the name. dwh_lookup_code is the numeric value and dwh_lookup_value is the value text to be used to label the corresponding numeric value.}
+
+\item{source_lookup}{lookup source variable (expecting either "dwh_lookup_acronym" or "column_name")}
 }
 \value{
 a new generated format object for each unique dwh_lookup_acronym with "_f" appended to the name (i.e. yes_no_only becomes yes_no_only_f
@@ -17,5 +19,5 @@ stored in the R working environment)
 }
 \description{
 Function that creates the format objects for labeling from the supplied data frame with expected variables
-including (dwh_lookup_acronym, dwh_lookup_code, dwh_lookup_value)
+including (dwh_lookup_acronym or column_name, dwh_lookup_code, dwh_lookup_value)
 }
